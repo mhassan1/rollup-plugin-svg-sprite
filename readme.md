@@ -1,25 +1,30 @@
-# rollup-plugin-svg-sprite
+# rollup-plugin-svg-sprite-deterministic
 
-[![Build Status](https://travis-ci.org/vladshcherbin/rollup-plugin-svg-sprite.svg?branch=master)](https://travis-ci.org/vladshcherbin/rollup-plugin-svg-sprite)
-[![Codecov](https://codecov.io/gh/vladshcherbin/rollup-plugin-svg-sprite/branch/master/graph/badge.svg)](https://codecov.io/gh/vladshcherbin/rollup-plugin-svg-sprite)
+[![Build Status](https://travis-ci.org/mhassan1/rollup-plugin-svg-sprite.svg?branch=master)](https://travis-ci.org/mhassan1/rollup-plugin-svg-sprite)
+[![Codecov](https://codecov.io/gh/mhassan1/rollup-plugin-svg-sprite/branch/master/graph/badge.svg)](https://codecov.io/gh/mhassan1/rollup-plugin-svg-sprite)
 
-Create external svg sprite file from your bundle using Rollup and optimize it using [SVGO](https://github.com/svg/svgo).
+Create deterministic external svg sprite file from your bundle using Rollup and optimize it using [SVGO](https://github.com/svg/svgo).
+
+This is a fork of [rollup-plugin-svg-sprite](https://www.npmjs.com/package/rollup-plugin-svg-sprite)
+that creates deterministic (repeatable) builds.
+See [#8](https://github.com/vladshcherbin/rollup-plugin-svg-sprite/pull/8)
+for motivation.
 
 ## Installation
 
 ```bash
 # yarn
-yarn add rollup-plugin-svg-sprite -D
+yarn add rollup-plugin-svg-sprite-deterministic -D
 
 # npm
-npm install rollup-plugin-svg-sprite -D
+npm install rollup-plugin-svg-sprite-deterministic -D
 ```
 
 ## Usage
 
 ```js
 // rollup.config.js
-import svgSprite from 'rollup-plugin-svg-sprite'
+import svgSprite from 'rollup-plugin-svg-sprite-deterministic'
 
 export default {
   input: 'src/index.js',
