@@ -1,7 +1,7 @@
 # rollup-plugin-svg-sprite-deterministic
 
-[![Build Status](https://travis-ci.org/mhassan1/rollup-plugin-svg-sprite.svg?branch=master)](https://travis-ci.org/mhassan1/rollup-plugin-svg-sprite)
-[![Codecov](https://codecov.io/gh/mhassan1/rollup-plugin-svg-sprite/branch/master/graph/badge.svg)](https://codecov.io/gh/mhassan1/rollup-plugin-svg-sprite)
+[![Build Status](https://travis-ci.org/mhassan1/rollup-plugin-svg-sprite.svg?branch=main)](https://travis-ci.org/mhassan1/rollup-plugin-svg-sprite)
+[![Codecov](https://codecov.io/gh/mhassan1/rollup-plugin-svg-sprite/branch/main/graph/badge.svg)](https://codecov.io/gh/mhassan1/rollup-plugin-svg-sprite)
 
 Create deterministic external svg sprite file from your bundle using Rollup and optimize it using [SVGO](https://github.com/svg/svgo).
 
