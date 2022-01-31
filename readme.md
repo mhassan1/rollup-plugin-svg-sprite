@@ -10,6 +10,8 @@ that creates deterministic (repeatable) builds.
 See [#8](https://github.com/vladshcherbin/rollup-plugin-svg-sprite/pull/8)
 for motivation.
 
+Version `2.x` of this plugin has some breaking changes. See [#1](https://github.com/mhassan1/rollup-plugin-svg-sprite/pull/1).
+
 ## Installation
 
 ```bash
@@ -75,8 +77,6 @@ svgSprite({
   minify: false
 })
 ```
-
-All other options are passed to [svgo package](https://github.com/svg/svgo) which is used inside.
 
 ## License
 

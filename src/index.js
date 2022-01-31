@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs-extra'
 import cheerio from 'cheerio'
-import SVGO from 'svgo'
+import { optimize } from 'svgo'
 
 function createSymbol(code, id) {
   const markup = cheerio.load(code, { xmlMode: true })
@@ -22,24 +22,33 @@ function createSprite(symbols) {
 }
 
 export default function svgSprite(options = {}) {
-  const { minify = true, outputFolder, ...rest } = options
+  const { minify = true, outputFolder } = options
 
   if (!outputFolder) {
     throw new Error('"outputFolder" must be set')
   }
 
-  const svgo = new SVGO({
+  const svgoConfig = {
     js2svg: {
       pretty: !minify,
       indent: 2
     },
     plugins: [
-      { cleanupIDs: false },
-      { removeDimensions: true },
-      { removeViewBox: false },
-      ...Object.entries(rest).map(([plugin, params]) => ({ [plugin]: params }))
+      {
+        name: 'preset-default',
+        params: {
+          overrides: {
+            cleanupIDs: false,
+            removeViewBox: false
+          }
+        }
+      },
+      {
+        name: 'removeDimensions'
+      }
     ]
-  })
+  }
+
   const loadedSvgs = new Set()
   const convertedSvgs = new Map()
 
@@ -68,7 +77,7 @@ export default function svgSprite(options = {}) {
     async writeBundle() {
       if (loadedSvgs.size) {
         const symbols = [...loadedSvgs.values()].map((id) => convertedSvgs.get(id)).sort()
-        const { data } = await svgo.optimize(createSprite(symbols))
+        const { data } = await optimize(createSprite(symbols), svgoConfig)
 
         await fs.outputFile(`${outputFolder}/sprites.svg`, data)
 
