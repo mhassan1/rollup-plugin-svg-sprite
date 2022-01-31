@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-svg-sprite-deterministic",
   "description": "Create deterministic external svg sprite from your bundle using Rollup",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Marc Hassan",
   "repository": "mhassan1/rollup-plugin-svg-sprite",
   "main": "dist/index.cjs.js",
