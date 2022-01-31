@@ -59,15 +59,4 @@ describe('Generate sprite file', () => {
     expect(await fs.pathExists('dist/sprites.svg')).toBe(true)
     expect(await readFile('dist/sprites.svg')).toBe(await readFile('samples/not-minified.svg'))
   })
-
-  test('SVGO options', async () => {
-    await build({
-      outputFolder: 'dist',
-      minify: false,
-      removeTitle: false
-    })
-
-    expect(await fs.pathExists('dist/sprites.svg')).toBe(true)
-    expect(await readFile('dist/sprites.svg')).toBe(await readFile('samples/svgo-options.svg'))
-  })
 })
