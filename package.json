@@ -32,6 +32,9 @@
     "rollup": "^4.22.4",
     "rollup-plugin-auto-external": "^2.0.0"
   },
+  "resolutions": {
+    "codecov/js-yaml": "^3.14.2"
+  },
   "files": [
     "dist",
     "readme.md"
